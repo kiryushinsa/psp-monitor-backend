@@ -15,7 +15,6 @@ public class Calls {
     @Column(name = "id")
     private Long id;
 
-
     @ManyToOne
     @JoinColumn (name = "who_go")
     private WorkShift who_go;

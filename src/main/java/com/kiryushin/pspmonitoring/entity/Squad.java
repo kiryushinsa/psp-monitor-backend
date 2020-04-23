@@ -21,6 +21,9 @@ public class Squad {
     @OneToMany(cascade =  CascadeType.ALL, mappedBy = "squad")
     private Set<Workers> workers;
 
+    @OneToMany(cascade =  CascadeType.ALL, mappedBy = "squad")
+    private Set<WorkShift> workShifts;
+
     @Column(name = "name")
     private String name;
 

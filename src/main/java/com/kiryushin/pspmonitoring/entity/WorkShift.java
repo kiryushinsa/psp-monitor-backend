@@ -15,6 +15,10 @@ public class WorkShift {
     @Column(name="id")
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "squad")
+    private Squad squad;
+
     @Column(name="time")
     private Date time;
 
