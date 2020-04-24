@@ -23,6 +23,9 @@ public class Calls {
     @JoinColumn(name = "squad")
     private Squad squad;
 
+    @ManyToOne
+    @JoinColumn (name = "type")
+    private TypeOfEmergency type;
 
     @Column(name = "time")
     private Date time;
@@ -56,6 +59,9 @@ public class Calls {
 
     @Column(name = "info_local")
     private String info_local;
+
+    @Column(name = "image_url")
+    private String image_url;
 
 
 }

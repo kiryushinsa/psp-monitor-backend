@@ -15,7 +15,6 @@ public class Workers {
     @Column(name = "id")
     private Long id;
 
-
     @Column(name = "first_name")
     private String firstName;
 
@@ -34,4 +33,7 @@ public class Workers {
     @ManyToOne
     @JoinColumn(name = "squad")
     private Squad squad;
+
+    @Column(name = "image_url")
+    private String image_url;
 }
