@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+
+
+
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
@@ -43,4 +46,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         Class[] domainTypes= entityClasses.toArray(new Class[0]);
         config.exposeIdsFor(domainTypes);
     }
+
+
+
 }
