@@ -20,5 +20,15 @@ public class CallsController {
         callsService.createCall(call);
         return ResponseEntity.ok().build();
     }
+    @DeleteMapping("/calls/{id}")
+    ResponseEntity<Void> deleteCalls(@PathVariable Long id) {
 
+        callsService.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/calls/{id}")
+    public Calls update(@PathVariable("id") Long id, @RequestBody Calls call ){
+        return callsService.updateCall(id,call);
+    }
 }

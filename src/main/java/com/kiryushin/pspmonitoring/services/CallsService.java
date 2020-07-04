@@ -18,4 +18,15 @@ public class CallsService {
     public void createCall(Calls calls){
         callsRepository.save(calls);
     }
+
+    public void deleteById(Long id){
+        callsRepository.deleteById(id);
+    }
+
+    public Calls updateCall(Long id, Calls call){
+        call.setId(id);
+        return callsRepository.save(call);
+    }
+
+
 }

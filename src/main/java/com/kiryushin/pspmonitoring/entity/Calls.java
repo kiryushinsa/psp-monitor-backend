@@ -37,6 +37,7 @@ public class Calls {
     private Date time;
 
     @Column(name = "date")
+    @JsonFormat(pattern="yyyy-mm-dd")
     private Date date;
 
     @Column(name = "info")
@@ -82,6 +83,9 @@ public class Calls {
 
     @Column(name = "affected")
     private Integer affected;
+
+    @Column(name = "address")
+    private String address;
 
 
 }
