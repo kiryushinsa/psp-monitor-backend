@@ -15,14 +15,6 @@ public class PspMonitoringApplication {
 		SpringApplication.run(PspMonitoringApplication.class, args);
 	}
 
-	/*@Autowired
-	private CallsService callsService;
 
-	@EventListener(ApplicationReadyEvent.class)
-	private void test(){
-		Calls calls = new Calls();
-		calls.setInfo("tstettstst");
-		callsService.createCall(calls);
-	}*/
 
 }
