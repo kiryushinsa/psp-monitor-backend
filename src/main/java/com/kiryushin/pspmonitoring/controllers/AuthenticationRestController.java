@@ -46,7 +46,7 @@ public class AuthenticationRestController {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username,
                     requestDto.getPassword())); // На основании пароляи и логина дать аутентификацию
 
-            User user = userService.findByUsername("username");
+            User user = userService.findByUsername(username);
 
             if(user == null){
                 throw new UsernameNotFoundException("User with username: " + username + "notfound");

@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService {
         User result = userRepository.findById(id).orElse(null);
 
         if(result == null){
-            log.warn("N findById - user: {} no user found by id: {}");
+            log.warn("IN findById - user: {} no user found by id: {}");
             return null;
         }
         log.info("IN findById - user: {} found user by id: {}", result);
