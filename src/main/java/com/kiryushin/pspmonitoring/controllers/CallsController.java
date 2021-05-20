@@ -16,7 +16,7 @@ public class CallsController {
 
 
     @PostMapping("/calls")
-    ResponseEntity<Void> createUser(@RequestBody Calls call){
+    ResponseEntity<Void> createCall(@RequestBody Calls call){
         callsService.createCall(call);
         return ResponseEntity.ok().build();
     }
@@ -31,4 +31,6 @@ public class CallsController {
     public Calls update(@PathVariable("id") Long id, @RequestBody Calls call ){
         return callsService.updateCall(id,call);
     }
+
+
 }

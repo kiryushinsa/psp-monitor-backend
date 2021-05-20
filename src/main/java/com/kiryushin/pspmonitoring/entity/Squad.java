@@ -1,8 +1,12 @@
 package com.kiryushin.pspmonitoring.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,13 +20,13 @@ public class Squad {
     private Long id;
 
     @OneToMany(cascade =  CascadeType.ALL, mappedBy = "squad")
-    private Set<Calls> calls;
+    private List<Calls> calls;
 
-    @OneToMany(cascade =  CascadeType.ALL, mappedBy = "squad")
+    @OneToMany(cascade =  CascadeType.ALL,mappedBy = "squad")
     private Set<Workers> workers;
 
     @OneToMany(cascade =  CascadeType.ALL, mappedBy = "squad")
-    private Set<WorkShift> workShifts;
+    private Set<Technic> technic;
 
     @Column(name = "name")
     private String name;
