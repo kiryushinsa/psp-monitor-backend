@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsedTechnicService {
 
-    @Autowired
+
     private final UsedTechnicRepository usedTechnicRepository;
 
     public UsedTechnicService(UsedTechnicRepository usedTechnicRepository) {

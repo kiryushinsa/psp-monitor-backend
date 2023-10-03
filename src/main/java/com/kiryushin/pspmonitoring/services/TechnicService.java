@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TechnicService {
-    @Autowired
+
     private final TechnicRepository technicRepository;
 
     public TechnicService(TechnicRepository technicRepository) {

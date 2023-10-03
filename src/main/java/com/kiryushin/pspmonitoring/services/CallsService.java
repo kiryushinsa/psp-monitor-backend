@@ -1,18 +1,15 @@
 package com.kiryushin.pspmonitoring.services;
-import lombok.extern.slf4j.Slf4j;
+
 import com.kiryushin.pspmonitoring.dao.CallsRepository;
 import com.kiryushin.pspmonitoring.entity.Calls;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @Slf4j
 public class CallsService {
 
-    @Autowired
-    private final CallsRepository callsRepository;
+    private CallsRepository callsRepository;
 
     public CallsService(CallsRepository callsRepository) {
         this.callsRepository = callsRepository;

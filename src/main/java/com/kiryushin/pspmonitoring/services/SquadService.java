@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class SquadService {
 
-    @Autowired
     private final SquadRepository squadRepository;
 
 
