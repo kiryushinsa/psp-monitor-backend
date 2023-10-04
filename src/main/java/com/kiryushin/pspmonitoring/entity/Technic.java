@@ -1,13 +1,11 @@
 package com.kiryushin.pspmonitoring.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -24,13 +22,13 @@ public class Technic {
 
     @Column(name = "start_date")
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date start_date;
+    private Date startDate;
 
     @Column(name = "start_mileage")
-    private Integer start_mileage;
+    private Integer startMileage;
 
     @Column(name = "current_mileage")
-    private Integer current_mileage;
+    private Integer currentMileage;
 
     @Column(name = "coef")
     private Integer coef;

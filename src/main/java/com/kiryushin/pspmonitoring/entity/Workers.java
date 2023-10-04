@@ -1,13 +1,9 @@
 package com.kiryushin.pspmonitoring.entity;
 
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
-
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -40,17 +36,17 @@ public class Workers {
             joinColumns = @JoinColumn(name = "id_worker"),
             inverseJoinColumns = @JoinColumn(name = "id_call")
     )
-    Set<Calls> worker_calls;
+    Set<Calls> workerCalls;
 
 
     @Column(name = "first_name")
-    private String first_name;
+    private String firstName;
 
     @Column(name = "last_name")
-    private String last_name;
+    private String lastName;
 
     @Column(name = "middle_name")
-    private String middle_name;
+    private String middleName;
 
     @Column(name = "level")
     private String level;
@@ -62,16 +58,16 @@ public class Workers {
     private String addSpec;
 
     @Column(name = "image_url")
-    private String image_url;
+    private String imageUrl;
 
     @Column(name ="blood_type")
-    private String blood_type;
+    private String bloodType;
 
     @Column(name ="phone")
     private String phone;
 
     @Column(name ="add_phone")
-    private String add_phone;
+    private String addPhone;
 
     @Column(name ="contacts")
     private String contacts;

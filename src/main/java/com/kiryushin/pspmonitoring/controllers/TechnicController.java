@@ -1,7 +1,6 @@
 package com.kiryushin.pspmonitoring.controllers;
 
 import com.kiryushin.pspmonitoring.entity.Technic;
-import com.kiryushin.pspmonitoring.entity.Workers;
 import com.kiryushin.pspmonitoring.services.TechnicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class TechnicController {
 
+    private final TechnicService technicService;
+
     @Autowired
-    private TechnicService technicService;
+    public TechnicController(TechnicService technicService) {
+        this.technicService = technicService;
+    }
 
     @PostMapping("/technic")
     ResponseEntity<Void> createTechnic(@RequestBody Technic technic){

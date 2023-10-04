@@ -1,7 +1,6 @@
 package com.kiryushin.pspmonitoring.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,7 +35,7 @@ public class ServiceTechnic {
     private Date time;
 
     @Column(name = "who_spend")
-    private String who_spend;
+    private String whoSpend;
 
     @ManyToOne
     @JoinColumn (name = "technic")

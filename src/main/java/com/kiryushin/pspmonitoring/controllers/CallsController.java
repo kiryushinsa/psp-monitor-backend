@@ -11,8 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/add")
 public class CallsController {
 
+    private final CallsService callsService;
+
     @Autowired
-    private CallsService callsService;
+    public CallsController(CallsService callsService) {
+        this.callsService = callsService;
+    }
 
 
     @PostMapping("/calls")

@@ -1,16 +1,21 @@
 package com.kiryushin.pspmonitoring.controllers;
 
-import com.kiryushin.pspmonitoring.entity.Calls;
 import com.kiryushin.pspmonitoring.entity.Workers;
 import com.kiryushin.pspmonitoring.services.WorkersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
+@CrossOrigin("http://localhost:4200")
 public class WorkersController {
 
+    private final WorkersService workersService;
+
     @Autowired
-    private WorkersService workersService;
+    public WorkersController(WorkersService workersService) {
+        this.workersService = workersService;
+    }
 
     @PostMapping("/workers")
     ResponseEntity<Void> createWorker(@RequestBody Workers worker){

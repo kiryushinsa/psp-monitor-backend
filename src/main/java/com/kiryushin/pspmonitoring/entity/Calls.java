@@ -2,18 +2,23 @@ package com.kiryushin.pspmonitoring.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-import javax.persistence.*;
-import java.sql.Time;
-import java.text.SimpleDateFormat;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
-import java.util.TimeZone;
 
 
 @Entity
@@ -37,7 +42,6 @@ public class Calls {
 
     @ManyToOne
     @JoinColumn(name = "squad")
-
     private Squad squad;
 
     /*
@@ -50,7 +54,7 @@ public class Calls {
     @JsonIgnore
 
     @ManyToMany(mappedBy = "worker_calls")
-    Set <Workers> workers_call;
+    Set <Workers> workersCalls;
 
 
     @OneToMany(cascade =  CascadeType.ALL, mappedBy = "calls")
@@ -75,29 +79,29 @@ public class Calls {
 
     @Column(name = "time_gone")
     @JsonFormat(pattern="HH:MM:ss",timezone = "GMT+03:00")
-    private Date time_gone;
+    private Date timeGone;
 
     @Column(name = "time_arrive")
     @JsonFormat(pattern="HH:MM:ss",timezone = "GMT+03:00")
-    private Date time_arrive;
+    private Date timeArrive;
 
     @Column(name = "time_local")
     @JsonFormat(pattern="HH:MM:ss",timezone = "GMT+03:00")
-    private Date time_local;
+    private Date timeLocal;
 
     @Column(name = "time_destroy")
     @JsonFormat(pattern="HH:MM:ss",timezone = "GMT+03:00")
-    private Date time_destroy;
+    private Date timeDestroy;
 
     @Column(name = "time_back")
     @JsonFormat(pattern="HH:MM:ss",timezone = "GMT+03:00")
-    private  Date time_back;
+    private  Date timeBack;
 
     @Column(name = "info_local")
-    private String info_local;
+    private String infoLocal;
 
     @Column(name = "image_url")
-    private String image_url;
+    private String imageUrl;
 
     @Column(name = "saved")
     private Integer saved;

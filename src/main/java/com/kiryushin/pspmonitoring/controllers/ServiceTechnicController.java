@@ -1,8 +1,6 @@
 package com.kiryushin.pspmonitoring.controllers;
 
-import com.kiryushin.pspmonitoring.entity.Calls;
 import com.kiryushin.pspmonitoring.entity.ServiceTechnic;
-import com.kiryushin.pspmonitoring.services.CallsService;
 import com.kiryushin.pspmonitoring.services.ServiceTechnicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +9,13 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin("http://localhost:4200")
 @RestController
 public class ServiceTechnicController {
+
+    private final ServiceTechnicService serviceTechnicService;
+
     @Autowired
-    private ServiceTechnicService serviceTechnicService;
+    public ServiceTechnicController(ServiceTechnicService serviceTechnicService) {
+        this.serviceTechnicService = serviceTechnicService;
+    }
 
 
     @PostMapping("/service")

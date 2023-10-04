@@ -1,10 +1,8 @@
 package com.kiryushin.pspmonitoring.controllers;
 
 import com.kiryushin.pspmonitoring.dto.AdminUserDto;
-import com.kiryushin.pspmonitoring.dto.UserDto;
 import com.kiryushin.pspmonitoring.entity.User;
 import com.kiryushin.pspmonitoring.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 public class AdminRestController {
 
 
-    @Autowired
     private final UserService userService;
 
     public AdminRestController(UserService userService) {

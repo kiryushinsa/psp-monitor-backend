@@ -1,8 +1,6 @@
 package com.kiryushin.pspmonitoring.controllers;
 
-import com.kiryushin.pspmonitoring.entity.Calls;
 import com.kiryushin.pspmonitoring.entity.Squad;
-import com.kiryushin.pspmonitoring.services.CallsService;
 import com.kiryushin.pspmonitoring.services.SquadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +9,14 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin("http://localhost:4200")
 @RestController
 public class SquadController {
+
+    private final SquadService squadService;
+
     @Autowired
-    private SquadService squadService;
+    public SquadController(SquadService squadService) {
+
+        this.squadService = squadService;
+    }
 
 
     @PostMapping("/squad")
